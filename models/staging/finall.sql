@@ -1,6 +1,3 @@
-{{ config(materialized='table') }}
-
-
 with customers as (
 
     select
@@ -8,8 +5,7 @@ with customers as (
         first_name,
         last_name
 
-    from {{source('datafeed_shared_schemaa','STG_CUSTOMERDATA')}})
-
+    from  {{source('datafeed_shared_schemaa','STG_CUSTOMERDATA')}})
 
 ),
 
@@ -22,7 +18,6 @@ orders as (
         status
 
     from {{source('datafeed_shared_schemaa','STG_ORDER')}})
-
 
 ),
 
@@ -52,7 +47,6 @@ final as (
         coalesce(customer_orders.number_of_orders, 0) as number_of_orders
 
     from customers
-
     left join customer_orders using (customer_id)
 
 )

@@ -8,4 +8,4 @@ sources:
     tables:
       - name: STG_CUSTOMERDATA
       - name: STG_ORDER
-      - name: STG_PAYMENTS
+      - name: STG_PAYMENT

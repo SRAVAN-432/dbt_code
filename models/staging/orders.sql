@@ -6,5 +6,5 @@ WITH tb1  as(
         id ,
         ORDER_DATE,
         USER_ID
-     from {{source('datafeed_shared_schema','STG_ORDER')}})
+     from {{source('datafeed_shared_schemaa','STG_ORDER')}})
      select * from tb1
